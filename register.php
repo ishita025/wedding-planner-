@@ -1,6 +1,4 @@
 <!-- register.php -->
-<?php
-
 include 'connect.php';
 
 if(isset($_POST['signUp'])){
@@ -10,7 +8,7 @@ if(isset($_POST['signUp'])){
     $password = md5($_POST['password']); // You should consider using a more secure hashing algorithm
 
     try {
-        // Prepare SQL statement to insert data
+        // Prepare SQL statement to insert data without specifying the 'id' column
         $stmt = $conn->prepare("INSERT INTO users (firstName, lastName, email, password) VALUES (:firstName, :lastName, :email, :password)");
         // Bind parameters
         $stmt->bindParam(':firstName', $firstName);
@@ -26,6 +24,7 @@ if(isset($_POST['signUp'])){
         echo "Error: " . $e->getMessage();
     }
 }
+
 
 
 if(isset($_POST['signIn'])){
