@@ -1,5 +1,6 @@
 <!-- register.php -->
 include 'connect.php';
+<?php
 
 if(isset($_POST['signUp'])){
     $firstName = $_POST['fName'];
