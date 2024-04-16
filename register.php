@@ -46,7 +46,7 @@ if(isset($_POST['signIn'])){
              session_start();
              $row = $stmt->fetch(PDO::FETCH_ASSOC);
              $_SESSION['email'] = $row['email'];
-             header("Location: index.php"); // Redirect to index.php after successful login
+             header("Location: index.html"); // Redirect to index.php after successful login
              exit();
         } else {
              echo "Not Found, Incorrect Email or Password";
